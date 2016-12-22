@@ -22,8 +22,21 @@
 <script type="text/javascript">
 var bundle = <?php echo json_encode($chart1); ?>;
 console.log(bundle);
+var count = Object.keys(bundle).length;
+console.log("count "+count);
 
+function generateData() {
+  var dataProvider = [];
+  for ( var i = 0; i < count; i++ ) {
+    dataProvider.push( {
+      "total": bundle[i].total,
+      "bulan": bundle[i].bulan
+    } );
+  }
+  return dataProvider;
+}
 
+// for (var i = 0; i < count; i++) { 
 
 var chart = AmCharts.makeChart( "chartdiv", {
   "type": "serial",
@@ -34,21 +47,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "text": "Sistem Informasi Arsip",
     "bold": false
   }],
-
-  "dataProvider": [ {
-      "total": bundle.total,
-      "bulan": bundle.bulan
-  },
-  //foreach
-  // for (var i = 0; i < bundle.length; i++) { 
-  //     {
-  //       "country": bundle[i],
-  //       "visits": bundle[i]
-  //     }
-  //    console.log(bundle[i]);
-  // }
-  //end foreach
-  ],
+  "dataProvider": generateData(),
 
   "gridAboveGraphs": true,
   "startDuration": 1,
@@ -57,14 +56,14 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "fillAlphas": 0.8,
     "lineAlpha": 0.2,
     "type": "column",
-    "valueField": "bulan"
+    "valueField": "total"
   } ],
   "chartCursor": {
     "categoryBalloonEnabled": false,
     "cursorAlpha": 0,
     "zoomable": false
   },
-  "categoryField": "total",
+  "categoryField": "bulan",
   "categoryAxis": {
     "gridPosition": "start",
     "gridAlpha": 0,
@@ -92,7 +91,10 @@ var chart = AmCharts.makeChart( "chartdiv", {
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 Selamat Datang <b><?php echo $pengguna->userNamaLengkap; ?></b> di <a class="alert-link" href="#">Sistem Informasi Pengelolaan Arsip</a> 
             </div>
-            <div id="chartdiv" style="width: 640px; height: 400px;"></div>
+            
+            <div id="chartdiv" style="width: 840px; height: 400px;"></div>
+            
+            
         </div>
     </div><!-- /.row -->
 

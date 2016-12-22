@@ -21,7 +21,7 @@ class M_admin extends CI_Model {
             // $this->db->where('userNama', $username);
             $query = $this->db->get();
             
-            return $query->row();
+            return $query->result();
 
         }
         

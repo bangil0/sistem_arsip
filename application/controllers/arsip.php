@@ -116,7 +116,7 @@ class Arsip extends CI_Controller {
              //file type 
 
             $size = 1000000; //1000 kb = 1 mb//ukuran file
-            $targetUpload = $_SERVER['DOCUMENT_ROOT']."/simsip/lampiran/";
+            $targetUpload = $_SERVER['DOCUMENT_ROOT']."/sistem-arsip-master/lampiran/";
 
             $idLampiran['id'] =$this->input->post('id_lampiran');
             $lampiran = $_FILES['lampiran']; //update blm d merge
@@ -302,7 +302,7 @@ class Arsip extends CI_Controller {
                 $id = $this->db->insert_id();
                 $config['upload_path'] = './lampiran';
                 $config['size'] = 1000000;
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|pdf|zip|rar|word|doc|docx|ppt|xls|xlsx|avi|mov|movie|mp3';
+                $config['allowed_types'] = 'gif|jpg|txt|png|jpeg|pdf|zip|rar|word|doc|docx|ppt|xls|xlsx|avi|mov|movie|mp3';
                 $this->load->library('upload',$config);
 
                 foreach ($_FILES as $key => $val) {   
