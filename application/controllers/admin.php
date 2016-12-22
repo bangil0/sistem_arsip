@@ -14,13 +14,16 @@ class Admin extends CI_Controller {
         //load model
         $this->load->model('m_login');
         $this->load->model('m_admin');
+        $this->load->model('m_arsip');
+       // $this->load->libraries('m_admin');
     }
 
     public function index() {
         $user = $this->session->userdata('username');
         $data['pengguna'] = $this->m_login->get_user($user);
-      
+        $data['chart1'] = $this->m_admin->get_chart1();
        
+        // die($data['chart1']);
         $this->load->view('themes/header', $data);
         $this->load->view('dashboard', $data);
         $this->load->view('themes/footer');
