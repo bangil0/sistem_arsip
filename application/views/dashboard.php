@@ -29,7 +29,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "type": "serial",
   "theme": "light",
   "titles": [{
-    "text": "Data Transaksi Arsip"
+    "text": "Data Transaksi Arsip Per Bulan"
   }, {
     "text": "Sistem Informasi Arsip",
     "bold": false
