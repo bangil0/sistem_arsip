@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Arsip Kegiatan LIB UGM</title>
+        <title>Arsip Kegiatan</title>
 
         <!-- Bootstrap core CSS -->
         <link href="<?php echo base_url(); ?>asset/css/datepicker.css" rel="stylesheet">
