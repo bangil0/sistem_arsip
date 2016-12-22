@@ -92,7 +92,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
                 Selamat Datang <b><?php echo $pengguna->userNamaLengkap; ?></b> di <a class="alert-link" href="#">Sistem Informasi Pengelolaan Arsip</a> 
             </div>
             
-            <div id="chartdiv" style="width: 840px; height: 400px;"></div>
+            <div class="center-block" id="chartdiv" style="width: 840px; height: 400px;"></div>
             
             
         </div>
