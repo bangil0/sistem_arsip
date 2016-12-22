@@ -29,9 +29,9 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "type": "serial",
   "theme": "light",
   "titles": [{
-    "text": "My Chart Title"
+    "text": "Data Transaksi Arsip"
   }, {
-    "text": "My Chart Sub-Title",
+    "text": "Sistem Informasi Arsip",
     "bold": false
   }],
 
